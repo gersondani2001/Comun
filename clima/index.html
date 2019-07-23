@@ -1,0 +1,100 @@
+<!--codigo de index principal html extructura principal-->
+<!doctype html>
+<html lang="en" dir="rtl" ng-app="clima">
+  <head>
+
+  	<!--hosted libraries-->
+  	<script src="lib/jquery.js"></script>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  	<!--link principal de css-->
+  	<link rel="stylesheet" href="css/style.css">
+
+  	<!--link de css de iconos icomoon free-->
+  	<link rel="stylesheet" href="resource/fonts/style.css">
+
+    <!--fonts google-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+
+
+  	<!--icono para la pestaña-->
+  	<link rel="icon" href="img/html.png">
+
+    <title>Open Weather Api.</title>
+
+
+  </head>
+  <body ng-controller="climaCtrl">
+
+    <div class="container-fluid"> 
+      <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+          <div class="container wow animated zoomIn" data-wow-delay="0.1s">
+
+
+          <main>
+
+            <div class="imgfor text-center">
+              <span class="icon-cloud"></span>
+            </div>
+        
+             <div id="div-ciudades" >      
+                <button class="for btn btn-danger" ng-click="sendData(x)">Clima</button>
+                <input class="text-center" type="text" placeholder="Ingrese una ciudad" name="city" id="input-city"  ng-model="x" required>
+                <label>Ciudad</label>
+                <i class="icon-fire" id="add-btn" ></i>      
+             </div>
+
+             <div id="resultados" ng-repeat="c in info">
+                <h2>Clima en: <span id="resul-city">{{c.data.name}}, {{c.data.sys.country}}</span></h2>
+                <div class="datos">
+                   <p>Temperatura: <span id="temp">{{c.data.main.temp -273.15 | number:2}}°</span></p>
+                   <p>Temperatura Máxima: <span id="temp-max">{{c.data.main.temp_max -273.15 | number:2}}° </span></p>
+                   <p>Temperatura Minima: <span id="temp-min">{{c.data.main.temp_min -273.15 | number:2}}°</span></p>
+                   <p>Presión: <span id="pres">{{c.data.main.pressure}}Hpa </span></p>
+                   <p>Humedad: <span id="hum">{{c.data.main.humidity}}% </span></p>
+                </div>
+
+              </div>
+          </main>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="lib/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+    <script src="js/script.js"></script>
+
+
+
+<!--este codigo es de gerson daniel boche peralta -->
+
+  </body>
+</html>
